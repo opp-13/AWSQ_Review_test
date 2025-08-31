@@ -1,8 +1,11 @@
 def calculator():
     print("간단한 사칙연산 계산기" )
-    num1 = float(input("첫 번째 숫자를 입력하세요: ") )
-    operator = input("연산자를 입력하세요 (+, -, *, /): " )
+try:
+    num1 = float(input("첫 번째 숫자를 입력하세요: "))
     num2 = float(input("두 번째 숫자를 입력하세요: "))
+except ValueError:
+    print("유효한 숫자를 입력해주세요.")
+    return
 
     if operator == '+':
         result = num1 + num2
