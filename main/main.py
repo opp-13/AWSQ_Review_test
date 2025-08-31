@@ -14,8 +14,13 @@ except ValueError:
     elif operator == '*':
         result = num1 * num2
     elif operator == '/':
-        if num2 != 0:
+        try:
+            if num2 == 0:
+                raise ZeroDivisionError("0으로 나눌 수 없습니다.")
             result = num1 / num2
+        except ZeroDivisionError as e:
+            print(str(e))
+            return
         else:
             print("0으로 나눌 수 없습니다.")
             return
